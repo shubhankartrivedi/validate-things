@@ -1,13 +1,14 @@
 {
   "name": "validate-things",
-  "version": "0.0.11",
+  "version": "0.0.2",
   "description": "Validate your data in server or client for security",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "repository": "https://github.com/shubhankartrivedi/validate-things",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "test": "tsup && node ./dist/index.js"
   },
   "keywords": ["validate","data","security","validate-things","validate-things-js","validate-things-node","validate-things-ts","validate-things-js-node","validate-things-ts-node","validate-things-js-node-ts","validate-things-js-ts","validate-things-node-ts","validate-things-js-node-ts"],
   "author": "shubhankartrivedi",
