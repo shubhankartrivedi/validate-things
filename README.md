@@ -16,6 +16,7 @@
   
 
 > Validate your data in server or client for security
+
 > Supports CommonJS and ES6
 
   
