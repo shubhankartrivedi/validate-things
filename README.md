@@ -8,7 +8,7 @@
 
   
 
-<img  alt="Version"  src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000"  />
+<img  alt="Version"  src="https://img.shields.io/badge/version-0.0.21-blue.svg?cacheSeconds=2592000"  />
 
   
 
@@ -93,6 +93,26 @@ isSQLInjection({ string });
 // string: string
 ```
 
+###  Check for XML External Entity (XXE) Injection:
+
+```js
+isXXEInjection({ string });
+// string: string
+```
+
+###  Check for LDAP Injection:
+
+```js
+isLDAPInjection({ string });
+// string: string
+```
+
+###  Check for Command Injection:
+
+```js
+isCommandInjection({ string });
+// string: string
+```
 
 ##  Author
 
