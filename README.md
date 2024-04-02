@@ -8,7 +8,7 @@
 
   
 
-<img  alt="Version"  src="https://img.shields.io/badge/version-1.0.1-blue.svg?cacheSeconds=2592000"  />
+<img  alt="Version"  src="https://img.shields.io/badge/version-1.0.2-blue.svg?cacheSeconds=2592000"  />
 
   
 
@@ -76,7 +76,7 @@ ValidateString({ string, minLength, maxLength, securityLevel, log });
 // minLength: number (minimum length you need)
 // maxLength?: number (maximum length you need)
 // securityLevel?: "high" | "normal" | "none" [default: "high"] (check for possible vulnerabilities in string)
-// log?: boolean [default: false] (log details about issues in console)
+// log?: boolean [default: false] (log checks in console)
 ```
 
 ###  Check for XSS (Cross-Site-Scripting) Attacks:

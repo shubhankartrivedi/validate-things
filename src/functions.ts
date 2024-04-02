@@ -13,44 +13,45 @@ export function isValidString({ string, minLength, maxLength, securityLevel = "h
 }): boolean {
     if (securityLevel === "high") {
         if (isSecure({ string, xss: true, sqlInjection: true, xxeInjection: true, ldapInjection: true, commandInjection: true }) === false){
-            if (log) logWithPrefix("Possible XSS, SQL Injection, XXE Injection, LDAP Injection, or Command Injection detected!");
+            if (log) logWithPrefix({message:"Possible XSS, SQL Injection, XXE Injection, LDAP Injection or Command Injection detected!", type:"error"});
             return false;
         }
         if (maxLength && string.length > maxLength){
-            if (log) logWithPrefix("String length is greater than the maximum length!");
+            if (log) logWithPrefix({message:"String length is greater than the maximum length!", type:"error"});
             return false;
         }
         if (string.length < minLength){
-            if (log) logWithPrefix("String length is less than the minimum length!");
+            if (log) logWithPrefix({message:"String length is less than the minimum length!", type:"error"});
             return false;
         }
     }
     if (securityLevel === "normal") {
         if (isSecure({ string, xss: true, sqlInjection: true, xxeInjection: false, ldapInjection: false, commandInjection: false }) === false){
-            if (log) logWithPrefix("Possible XSS or SQL Injection detected!");
+            if (log) logWithPrefix({message:"Possible XSS or SQL Injection detected!", type:"error"});
             return false;
         }
         if (maxLength && string.length > maxLength){
-            if (log) logWithPrefix("String length is greater than the maximum length!");
+            if (log) logWithPrefix({message:"String length is greater than the maximum length!", type:"error"});
             return false;
         }
         if (string.length < minLength){
-            if (log) logWithPrefix("String length is less than the minimum length!");
+            if (log) logWithPrefix({message:"String length is less than the minimum length!", type:"error"});
             return false;
         }
        
     }
     if (securityLevel === "none") {
         if (maxLength && string.length > maxLength){
-            if (log) logWithPrefix("String length is greater than the maximum length!");
+            if (log) logWithPrefix({message:"String length is greater than the maximum length!", type:"error"});
             return false;
         }
         if (string.length < minLength){
-            if (log) logWithPrefix("String length is less than the minimum length!");
+            if (log) logWithPrefix({message:"String length is less than the minimum length!", type:"error"});
             return false;
         }
     }
-    return false;
+    if (log) logWithPrefix({message:"String is valid!", type:"success"});
+    return true;
 }
 
 
@@ -196,3 +197,4 @@ export function isCommandInjection({ string }: { string: string }): boolean {
     return true;
 }
 
+isValidString({string:"Hello World",minLength:5,securityLevel:"high",log:true});
